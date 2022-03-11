@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM "<PATH>/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pack.Question" table="questionlist">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="qname"></property>
+
+		<list name="answers" table="answerlist">
+			<key column="qid"></key>
+			<index column="type"></index>
+			<element column="answer" type="string"></element>
+		</list>
+
+	</class>
+
+</hibernate-mapping>  
